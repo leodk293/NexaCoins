@@ -30,7 +30,7 @@ export default function Page() {
     return (
         <main className=" m-auto w-auto md:w-[40rem]">
 
-            <div className=' mt-10 flex flex-col border border-transparent p-5 rounded-[5px] bg-[#00000065]'>
+            <div className=' mt-10 flex flex-col border border-transparent p-5 rounded-[5px] bg-[#0000008c]'>
 
                 <div className=' flex flex-row gap-2'>
                     <h1 className='text-center text-2xl font-bold text-white md:text-left md:text-3xl'>Contact us</h1>

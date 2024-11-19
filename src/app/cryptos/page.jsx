@@ -6,7 +6,7 @@ import { MoveUp } from "lucide-react";
 import { MoveDown } from "lucide-react";
 import Link from "next/link";
 
-export default function page() {
+export default function Page() {
 
     const api_key = process.env.NEXT_PUBLIC_COIN_GECKO_API_KEY;
 
@@ -67,7 +67,7 @@ export default function page() {
             }
 
             const data = await response.json();
-            console.log(data)
+            //console.log(data)
 
             setCryptoList({
                 error: false,

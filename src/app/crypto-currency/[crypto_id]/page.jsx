@@ -1,7 +1,7 @@
 'use client';
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
-import ReadMore from '@/app/components/readMore';
+import ReadMore from '../../components/readMore';
 import Link from 'next/link';
 import Chart from 'react-google-charts';
 

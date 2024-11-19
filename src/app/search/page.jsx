@@ -40,7 +40,7 @@ export default function Page() {
             if (!response.ok) throw new Error(`An error has occured : ${response.status}`);
             const result = await response.json();
 
-            console.log(result)
+            //console.log(result)
             setCrypto({ error: false, data: result, loading: false });
 
         }
