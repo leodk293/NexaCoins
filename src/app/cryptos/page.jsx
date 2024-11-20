@@ -98,7 +98,7 @@ export default function Page() {
                         name: 'usd',
                         symbol: `${getCurrencySymbol('usd')}`
                     })}
-                    className=" outline-none font-senibold border border-transparent bg-green-900 px-5 py-1 rounded-[25px]"
+                    className=" outline-none font-senibold border border-transparent bg-green-900 px-5 py-1 rounded-[25px] md:hover:bg-green-600 duration-150"
                 >
                     Dollar $
                 </button>
@@ -108,7 +108,7 @@ export default function Page() {
                         name: 'eur',
                         symbol: `${getCurrencySymbol('eur')}`
                     })}
-                    className=" outline-none font-senibold border border-transparent bg-blue-900 px-5 py-1 rounded-[25px]"
+                    className=" outline-none font-senibold border border-transparent bg-blue-900 px-5 py-1 rounded-[25px] md:hover:bg-blue-600 duration-150"
                 >
                     Euro €
                 </button>
@@ -118,7 +118,7 @@ export default function Page() {
                         name: 'gbp',
                         symbol: `${getCurrencySymbol('gbp')}`
                     })}
-                    className=" outline-none font-senibold border border-transparent bg-purple-900 px-5 py-1 rounded-[25px]"
+                    className=" outline-none font-senibold border border-transparent bg-purple-900 px-5 py-1 rounded-[25px] md:hover:bg-purple-600 duration-150"
                 >
                     Pound £
                 </button>
@@ -128,7 +128,7 @@ export default function Page() {
                         name: 'inr',
                         symbol: `${getCurrencySymbol('inr')}`
                     })}
-                    className=" outline-none font-senibold border border-transparent bg-orange-900 px-5 py-1 rounded-[25px]"
+                    className=" outline-none font-senibold border border-transparent bg-orange-900 px-5 py-1 rounded-[25px] md:hover:bg-orange-600 duration-150"
                 >
                     Rupee ₹
                 </button>

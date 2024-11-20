@@ -21,9 +21,9 @@ export default function Footer() {
 
                 <div className=' flex flex-col gap-2'>
                     <p className=' font-bold text-xl'>Social networks</p>
-                    <Link href={'/'} className=' pt-2 hover:underline hover:text-gray-300 underline-offset-2'>Twitter</Link>
-                    <Link className='hover:underline hover:text-gray-300 underline-offset-2' href={'/'}>Facebook</Link>
-                    <Link className='hover:underline hover:text-gray-300 underline-offset-2' href={'/'}>Linkedin</Link>
+                    <Link target='_blank' href={'https://x.com/Aboubac48530295'} className=' pt-2 hover:underline hover:text-gray-300 underline-offset-2'>Twitter</Link>
+                    <Link target='_blank' className='hover:underline hover:text-gray-300 underline-offset-2' href={'https://www.facebook.com/profile.php?id=100092315485742'}>Facebook</Link>
+                    <Link target='_blank' className='hover:underline hover:text-gray-300 underline-offset-2' href={'https://www.linkedin.com/in/aboubacar-traore-495736252/'}>Linkedin</Link>
                 </div>
 
                 <div className='flex flex-col gap-2'>

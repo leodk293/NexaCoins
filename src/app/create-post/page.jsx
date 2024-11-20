@@ -157,7 +157,7 @@ export default function Page() {
                             {session?.email === msg.email && (
                                 <button
                                     onClick={() => handleDelete(msg.id)}
-                                    className="mt-2 text-sm text-red-500 hover:underline self-end"
+                                    className="mt-2 text-sm border border-transparent px-4 py-2 rounded-[5px] bg-red-600 font-semibold text-white self-end hover:bg-red-800 duration-300"
                                 >
                                     Delete
                                 </button>
