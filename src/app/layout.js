@@ -30,7 +30,7 @@ export default function RootLayout({ children }) {
 
         <Search_Cypto />
 
-        <div className=" m-2">
+        <div className=" pt-5 m-2">
           {children}
         </div>
         <Footer />
