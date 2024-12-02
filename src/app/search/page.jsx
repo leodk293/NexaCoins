@@ -133,7 +133,7 @@ export default function Page() {
 
                                 <div className=' flex flex-row gap-2'>
                                     <h1 className=' text-white text-2xl font-bold self-center md:text-4xl'>{crypto.data.name}</h1>
-                                    <Image
+                                    <img
                                         src={crypto.data.image.large}
                                         alt={crypto.data.name}
                                         width={50}

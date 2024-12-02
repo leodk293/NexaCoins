@@ -115,7 +115,7 @@ export default function Page({ params }) {
 
                         <div className=' flex flex-row gap-2'>
                             <h1 className=' text-white text-2xl font-bold self-center md:text-4xl'>{coinsData.data.name}</h1>
-                            <Image
+                            <img
                                 src={coinsData.data.image.large}
                                 alt={coinsData.data.name}
                                 width={50}

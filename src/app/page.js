@@ -240,7 +240,7 @@ export default function Home() {
 
                     <p>{crypto.market_cap_rank}</p>
                     <p className=" leading-5">{crypto.name}</p>
-                    <Image
+                    <img
                       src={crypto.image}
                       alt={crypto.name}
                       width={25}
