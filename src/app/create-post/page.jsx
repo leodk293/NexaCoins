@@ -6,16 +6,16 @@ import { eq } from 'drizzle-orm';
 
 export default function Page() {
     const [formData, setFormData] = useState({ name: '', email: '', comment: '' });
-    const [messages, setMessages] = useState([]); // Use an array to store multiple messages
+    const [messages, setMessages] = useState([]); 
     const [session, setSession] = useState(null);
 
-    // Fetch session data
+    
     useEffect(() => {
         async function fetchSession() {
             try {
-                const response = await fetch('/api/auth/session'); // Ensure this API fetches Google Auth session data
+                const response = await fetch('/api/auth/session'); 
                 const data = await response.json();
-                setSession(data.user); // The user object should contain the authenticated user's email
+                setSession(data.user); 
             } catch (err) {
                 console.error("Session retrieval error:", err);
             }
@@ -23,16 +23,16 @@ export default function Page() {
         fetchSession();
     }, []);
 
-    // Fetch messages from the database
+    
     useEffect(() => {
         async function fetchMessages() {
             try {
                 const dbMessages = await db.select().from(postsTable);
                 const formattedMessages = dbMessages.map((msg) => ({
-                    id: msg.id, // Include the ID for deletion
+                    id: msg.id, 
                     name: msg.name,
                     comment: msg.content,
-                    email: msg.email, // Include email for ownership check
+                    email: msg.email, 
                 }));
                 setMessages(formattedMessages);
             } catch (err) {
@@ -63,18 +63,18 @@ export default function Page() {
         try {
             await db.insert(postsTable).values({
                 name: formData.name,
-                email: userId, // Use the authenticated user's email
+                email: userId, 
                 content: formData.comment,
                 userId: userId,
             });
 
-            // Add the new comment to the messages array
+           
             setMessages((prevMessages) => [
                 ...prevMessages,
                 { id: Date.now(), name: formData.name, comment: formData.comment, email: userId },
             ]);
 
-            setFormData({ name: '', email: '', comment: '' }); // Reset form
+            setFormData({ name: '', email: '', comment: '' }); 
         } catch (error) {
             console.error("Error publishing comment:", error);
             alert("Failed to publish your comment. Please try again.");
@@ -88,17 +88,15 @@ export default function Page() {
         }
 
         try {
-            // Find the message by ID to ensure ownership
+            
             const messageToDelete = messages.find((msg) => msg.id === id);
             if (messageToDelete?.email !== session.email) {
                 alert("You can only delete your own comments.");
                 return;
             }
 
-            // Delete from database
             await db.delete(postsTable).where(eq(postsTable.id, id));
 
-            // Update the messages state
             setMessages((prevMessages) => prevMessages.filter((msg) => msg.id !== id));
         } catch (error) {
             console.error("Error deleting message:", error);
@@ -127,7 +125,7 @@ export default function Page() {
 
                 <input
                     required
-                    className="placeholder:text-center capitalize bg-transparent font-semibold border border-white text-white text-xl outline-none rounded-[5px] p-2"
+                    className="placeholder:text-center bg-transparent font-semibold border border-white text-white text-xl outline-none rounded-[5px] p-2"
                     placeholder="Name"
                     type="text"
                     name="name"
@@ -143,7 +141,6 @@ export default function Page() {
                 </button>
             </form>
 
-            {/* Display all messages */}
             <div className="mt-10">
                 {messages.length > 0 ? (
                     messages.map((msg) => (
@@ -153,7 +150,7 @@ export default function Page() {
                         >
                             <p className="font-bold">{msg.name}</p>
                             <p className="font-semibold">{msg.comment}</p>
-                            {/* Show delete button only for the owner */}
+                            
                             {session?.email === msg.email && (
                                 <button
                                     onClick={() => handleDelete(msg.id)}
