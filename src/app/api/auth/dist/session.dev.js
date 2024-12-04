@@ -7,7 +7,6 @@ exports["default"] = handler;
 
 var _auth = require("../../auth");
 
-// pages/api/auth/session.js
 function handler(req, res) {
   var session;
   return regeneratorRuntime.async(function handler$(_context) {
@@ -20,8 +19,7 @@ function handler(req, res) {
 
         case 3:
           session = _context.sent;
-          console.log("Session data:", session); // Log session data to verify
-
+          console.log("Session data:", session);
           res.status(200).json({
             session: session
           });

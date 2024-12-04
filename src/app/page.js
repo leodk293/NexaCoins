@@ -6,6 +6,7 @@ import { MoveUp } from "lucide-react";
 import { MoveDown } from "lucide-react";
 import { MoveRight } from "lucide-react";
 import Link from "next/link";
+import './globals.css'
 
 export default function Home() {
   const api_key = process.env.NEXT_PUBLIC_COIN_GECKO_API_KEY;
@@ -217,7 +218,11 @@ export default function Home() {
       {cryptoList.error === true ?
         <p className=" text-2xl h-[10rem] font-bold text-red-600 text-center mt-10">Something went wrong, try again</p> :
         cryptoList.loading === true ?
-          <p className=" text-2xl h-[10rem] font-bold text-orange-600 text-center mt-10">Loading...</p> :
+          <div className=" h-[10rem] mt-10 flex flex-col items-center gap-1">
+            <div className="loader" />
+            <p className=" text-2xl font-bold text-orange-600 text-center">Loading...</p>
+          </div>
+          :
           (
             cryptoList.data &&
             <div className=" mt-10 text-white" >
